@@ -4,7 +4,7 @@
 #
 Name     : pypi-poetry_plugin_export
 Version  : 1.2.0
-Release  : 7
+Release  : 8
 URL      : https://files.pythonhosted.org/packages/42/4a/b5cafd020ef9294a160950801041d6d0b37ca75db7e8f78f084cae425b47/poetry_plugin_export-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/42/4a/b5cafd020ef9294a160950801041d6d0b37ca75db7e8f78f084cae425b47/poetry_plugin_export-1.2.0.tar.gz
 Summary  : Poetry plugin to export the dependencies to various formats
