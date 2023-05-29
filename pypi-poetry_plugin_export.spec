@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-poetry_plugin_export
-Version  : 1.3.1
-Release  : 10
-URL      : https://files.pythonhosted.org/packages/ff/2c/d30a094c516a4fe87976b9369624ff7fcc0301cc3422cd80b44ed8675823/poetry_plugin_export-1.3.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ff/2c/d30a094c516a4fe87976b9369624ff7fcc0301cc3422cd80b44ed8675823/poetry_plugin_export-1.3.1.tar.gz
+Version  : 1.4.0
+Release  : 11
+URL      : https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz
 Summary  : Poetry plugin to export the dependencies to various formats
 Group    : Development/Tools
 License  : MIT
@@ -15,7 +15,7 @@ Requires: pypi-poetry_plugin_export-license = %{version}-%{release}
 Requires: pypi-poetry_plugin_export-python = %{version}-%{release}
 Requires: pypi-poetry_plugin_export-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(poetry)
+BuildRequires : pypi(poetry_core)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -54,10 +54,10 @@ python3 components for the pypi-poetry_plugin_export package.
 
 
 %prep
-%setup -q -n poetry_plugin_export-1.3.1
-cd %{_builddir}/poetry_plugin_export-1.3.1
+%setup -q -n poetry_plugin_export-1.4.0
+cd %{_builddir}/poetry_plugin_export-1.4.0
 pushd ..
-cp -a poetry_plugin_export-1.3.1 buildavx2
+cp -a poetry_plugin_export-1.4.0 buildavx2
 popd
 
 %build
@@ -65,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681776751
+export SOURCE_DATE_EPOCH=1685402825
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
