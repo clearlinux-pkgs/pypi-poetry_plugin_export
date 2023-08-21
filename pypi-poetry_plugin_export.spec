@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-poetry_plugin_export
-Version  : 1.4.0
-Release  : 11
-URL      : https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz
+Version  : 1.5.0
+Release  : 12
+URL      : https://files.pythonhosted.org/packages/72/ac/363c8397e5e3cf386ae3298f334fa2fe01463ee5e017366658630e27f6a2/poetry_plugin_export-1.5.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/72/ac/363c8397e5e3cf386ae3298f334fa2fe01463ee5e017366658630e27f6a2/poetry_plugin_export-1.5.0.tar.gz
 Summary  : Poetry plugin to export the dependencies to various formats
 Group    : Development/Tools
 License  : MIT
@@ -22,7 +22,7 @@ BuildRequires : pypi(poetry_core)
 
 %description
 # Poetry Plugin: Export
-This package is a plugin that allows the export of locked packages to various formats.
+[![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 
 %package license
 Summary: license components for the pypi-poetry_plugin_export package.
@@ -54,10 +54,10 @@ python3 components for the pypi-poetry_plugin_export package.
 
 
 %prep
-%setup -q -n poetry_plugin_export-1.4.0
-cd %{_builddir}/poetry_plugin_export-1.4.0
+%setup -q -n poetry_plugin_export-1.5.0
+cd %{_builddir}/poetry_plugin_export-1.5.0
 pushd ..
-cp -a poetry_plugin_export-1.4.0 buildavx2
+cp -a poetry_plugin_export-1.5.0 buildavx2
 popd
 
 %build
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685402825
+export SOURCE_DATE_EPOCH=1692630233
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

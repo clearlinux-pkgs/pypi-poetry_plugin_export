@@ -1,5 +1,5 @@
 PKG_NAME := pypi-poetry_plugin_export
-URL = https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz
+URL = https://files.pythonhosted.org/packages/72/ac/363c8397e5e3cf386ae3298f334fa2fe01463ee5e017366658630e27f6a2/poetry_plugin_export-1.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
